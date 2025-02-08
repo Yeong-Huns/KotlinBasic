@@ -29,11 +29,11 @@ fun main(){
     val originArray = arrayOf<Number>(1, 2, 3, 4, 5);
     val editedArray = originArray.plus(6)
 
-    /* actual operator 함수이기 때문에, 아래와 같이 사용가능 */
+    /* operator 함수이기 때문에, 아래와 같이 사용가능 */
     val editedArray2 = originArray + 6 // [1, 2, 3, 4, 5, 6]
 
-    println("원본 배열의 값 : ${originArray.contentDeepToString()}") // [1, 2, 3, 4, 5]
-    println("값이 추가된 새로운 배열 : ${editedArray.contentDeepToString()}") // [1, 2, 3, 4, 5, 6]
+    println("원본 배열의 값 : ${originArray.contentToString()}") // [1, 2, 3, 4, 5]
+    println("값이 추가된 새로운 배열 : ${editedArray.contentToString()}") // [1, 2, 3, 4, 5, 6]
 
     /** @type <T> Array<T>.sliceArray(indices: IntRange)
      * @description Returns an array containing elements at indices in the specified [indices] range.
@@ -95,11 +95,11 @@ fun main(){
      * @description Returns an array with all elements of this array sorted according to their natural sort order.
      * @summary 오름차순으로 정렬한 새로운 배열을 반환.
      */
-    println("배열 오름차순 정렬 : ${newArray1.sortedArray().contentToString()}}") // 배열 오름차순 정렬 : [1, 2, 3, 4, 6, 6, 7, 8]}
+    println("배열 오름차순 정렬 : ${newArray1.sortedArray().contentToString()}") // 배열 오름차순 정렬 : [1, 2, 3, 4, 6, 6, 7, 8]}
 
     /** @type  <T : Comparable<T>> Array<T>.sortedArrayDescending(): Array<T>
      * @description Returns an array with all elements of this array sorted descending according to their natural sort order.
      * @summary 내림차순으로 정렬한 새로운 배열을 반환.
      */
-    println("배열 내림차순 정렬 : ${newArray1.sortedArrayDescending().contentToString()}}") // 배열 내림차순 정렬 : [8, 7, 6, 6, 4, 3, 2, 1]}
+    println("배열 내림차순 정렬 : ${newArray1.sortedArrayDescending().contentToString()}") // 배열 내림차순 정렬 : [8, 7, 6, 6, 4, 3, 2, 1]}
 }
