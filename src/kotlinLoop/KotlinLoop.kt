@@ -56,7 +56,7 @@ fun main() {
         println(c) // e c a
     }
 
-    /* 기본적으로 가장 가까운 함수 또는 익명 함수에서 반환*/
+    /* return 기본적으로 가장 가까운 함수 또는 익명 함수에서 반환*/
     fun loop() {
         for (i in 0..3) {
             for (j in 0..3) {
@@ -65,8 +65,21 @@ fun main() {
             }
         }
     }
-    /* 가장 가까운 반복문을 종료 */
-    loop() // i = 0, j = 0, i = 0, j = 1
+
+    loop() // i = 0, j = 0, i = 0, j = 1 -> 함수 (loop() ) 자체가 종료
+    println()
+
+    /* break 가장 가까운 반복문을 종료 */
+    fun loopBreak() {
+        for (i in 0..3) {
+            for (j in 0..3) {
+                if (j == 2) break
+                println("i = $i, j = $j")
+            }
+        }
+    }
+    loopBreak()
+    println()
 
     fun loop2() {
         for (i in 0..3) {
@@ -79,7 +92,7 @@ fun main() {
 
     /* 가장 가까운 반복문을 다음단계로 진행 */
     loop2()
-
+    println()
     fun loop3() {
         loop@ for (i in 0..3) {
             for (j in 0..3) {
@@ -91,4 +104,17 @@ fun main() {
 
     /* 라벨이 표시된 위치를 종료 */
     loop3()
+    println()
+
+    fun loop4() {
+        for (i in 0..3) {
+            loop@ for (j in 0..3) {
+                if (j == 2) break@loop
+                println("i = $i, j = $j")
+            }
+        }
+    }
+
+    loop4()
+
 }

@@ -34,6 +34,29 @@ fun main(){
     val divide = money1 / money2
     println("divide: $divide") // divide: Money(amount=2)
 
+    /* vararg : 가변 파라미터 설정 */
+    val array = arrayOf("one", "two", "three")
+    /* spread operator(*) 을 배열 앞에 붙여서 전달 */
+    printAll(*array)
+
+    /*일반 파라미터, 가변 파라미터 혼용*/
+    /* 일반 파라미터를 앞에 배치해서 순서대로 전달하고, 남은 아규먼트들은 모두 vararg 로 전달 */
+    printAll2("student", "kim", "park", "lee")
+
+}
+
+fun printAll2(student: String, vararg names: String) {
+    println("====$student======")
+    for (name in names) {
+        print("$name, ")
+    }
+    println()
+}
+
+fun printAll(vararg numbers : String){
+    for(number in numbers){
+        println(number)
+    }
 }
 
 data class Money(private val amount: Int){

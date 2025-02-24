@@ -9,5 +9,5 @@
  * 2025-02-06        Yeong-Huns       최초 생성
  */
 fun main() {
-    println("Hello World!")
+
 }
